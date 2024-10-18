@@ -20,6 +20,12 @@ spring:
             - Path=/config/**
           filters:
             - StripPrefix=1
+        - id: chat-service
+          uri: lb://chat-service
+          predicates:
+            - Path=/chat/**
+          filters:
+            - StripPrefix=1
 
 eureka:
   client:
